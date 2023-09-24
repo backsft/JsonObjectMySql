@@ -1,5 +1,7 @@
 package com.JSONObject;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -18,6 +20,18 @@ public class Student {
     @Column(columnDefinition = "JSON")
     @Convert(converter = InterestAndHobbiesConverter.class)
     private InterestAndHobbies interestAndHobbies;
+    
+    List<String> address;
+    
+    
+
+	public List<String> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<String> address) {
+		this.address = address;
+	}
 
 	public Long getId() {
 		return id;
